@@ -9,3 +9,6 @@ TODO
 * WebSocket
 * JSON message
 * DB
+
+## LICENSE
+LICENSE Under [MIT](LICENSE)

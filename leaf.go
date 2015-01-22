@@ -1,10 +1,11 @@
 package leaf
 
 import (
-	"github.com/name5566/leaf/log"
-	"github.com/name5566/leaf/module"
 	"os"
 	"os/signal"
+
+	"github.com/name5566/leaf/log"
+	"github.com/name5566/leaf/module"
 )
 
 type Conf struct {
@@ -33,7 +34,7 @@ func Run(mods ...module.Module) {
 	}
 	module.Init()
 
-	// close
+	// close when SIGINT cached
 	c := make(chan os.Signal, 1)
 	signal.Notify(c, os.Interrupt, os.Kill)
 	sig := <-c

@@ -1,3 +1,4 @@
+// leaf log
 package log
 
 import (
@@ -35,13 +36,13 @@ func New(strLevel string, pathname string) (*Logger, error) {
 	// level
 	var level int
 	switch strings.ToLower(strLevel) {
-	case "debug":
+	case "d", "debug":
 		level = debugLevel
 	case "release":
 		level = releaseLevel
-	case "error":
+	case "e", "error":
 		level = errorLevel
-	case "fatal":
+	case "f", "fatal":
 		level = fatalLevel
 	default:
 		return nil, errors.New("unknown level: " + strLevel)
